@@ -1,14 +1,14 @@
 import cv2
 import numpy as np
 
-img = cv2.imread("recognize_stop_sign/lepeca.jpg", cv2.IMREAD_UNCHANGED)
+img = cv2.imread("insert_file_path_here", cv2.IMREAD_UNCHANGED)
 scale_percent = 40
 width = int(img.shape[1] * scale_percent / 100)
 height = int(img.shape[0] * scale_percent / 100)
 dim = (width, height)
 resized = cv2.resize(img, dim, interpolation= cv2.INTER_AREA)
 
-face_classifier = cv2.CascadeClassifier('recognize_stop_sign/cat_face.xml')
+face_classifier = cv2.CascadeClassifier('cat_face.xml')
 gray = cv2.cvtColor(resized, cv2.COLOR_BGR2GRAY)
 faces = face_classifier.detectMultiScale(gray, 1.0485258, 6)
 if faces is ():
